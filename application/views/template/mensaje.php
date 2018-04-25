@@ -1,3 +1,3 @@
 <?php
 
-echo "ESTAS EN EL MENSAJE";
+//echo "ESTAS EN EL MENSAJE";
