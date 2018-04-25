@@ -1,5 +1,5 @@
 <!--Footer-->
-<footer class="page-footer text-center font-small mt-4 wow fadeIn">
+<footer class="page-footer text-center font-small mt-4 wow fadeIn" id="footer">
 
     <hr class="my-4">
 
@@ -17,6 +17,7 @@
 <script type="text/javascript" src="<?=base_url()?>assets\js\popper.min.js"></script>
 <script type="text/javascript" src="<?=base_url()?>assets\js\bootstrap.min.js"></script>
 <script type="text/javascript" src="<?=base_url()?>assets\js\mdb.min.js"></script>
+<script type="text/javascript" src="<?=base_url()?>assets\js\toastr.min.js"></script>
     <!-- Archivo principal JS-->
 <script type="text/javascript" src="<?=base_url()?>assets\js\base.js"></script>
 <script type="text/javascript">new WOW().init();</script>

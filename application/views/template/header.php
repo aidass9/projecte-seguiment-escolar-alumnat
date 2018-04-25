@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="<?= base_url() ?>assets\css\font-awesome-4.7.0\css\font-awesome.min.css">
         <link rel="stylesheet" href="<?= base_url() ?>assets\css\bootstrap.min.css">
         <link rel="stylesheet" href="<?= base_url() ?>assets\css\mdb.min.css">
+        <link rel="stylesheet" href="<?= base_url() ?>assets\css\toastr.min.css">
             <!-- CSS GLOBAL (todo lo que quiera que efecte a todo)-->
         <link rel="stylesheet" href="<?= base_url() ?>assets\css\style.min.css" >
 
