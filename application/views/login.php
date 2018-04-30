@@ -13,18 +13,17 @@
 	  <!--Grid column-->
 	  <div class="col-md-6 mb-4 white-text text-center text-md-left" id="mensajeBienvenida">
 
-		<h1 class="display-4 font-weight-bold">Learn Bootstrap 4 with MDB</h1>
+		<h1 class="display-4 font-weight-bold">Seguiment alumnat IES Maria Enriquez</h1>
 
 		<hr class="hr-light">
 
 		<p>
-		  <strong>Best & free guide of responsive web design</strong>
+		  <strong>Seguiment escolar</strong>
 		</p>
 
 		<p class="mb-4 d-none d-md-block">
-		  <strong>The most comprehensive tutorial for the Bootstrap 4. Loved by over 500 000 users. Video and written versions
-			available. Create your own, stunning website.</strong>
-		</p>
+		  <strong>Benvinguts a l'aplicación del institut IES Maria Enriquez per al seguiment escolar del alumnat.</strong>
+          </p>
 
 		<button class="btn btn-indigo btn-lg" onclick="mostrarLogin()">Iniciar sessió
               <i class="fa fa-graduation-cap ml-2"></i>
@@ -37,7 +36,7 @@
 	  <div class="col-md-6 col-xl-5 mb-4" id="login">
 
 		<!--Card-->
-		<div class="card">
+		<div class="card div-login">
 
 		  <!--Card content-->
 		  <div class="card-body">
@@ -46,34 +45,23 @@
 			<form name="">
 			  <!-- Heading -->
 			  <h3 class="dark-grey-text text-center">
-				<strong>Write to us:</strong>
+				<strong>INICIAR SESSIÓ</strong>
 			  </h3>
 			  <hr>
 
 			  <div class="md-form">
 				<i class="fa fa-user prefix grey-text"></i>
 				<input type="text" id="form3" class="form-control">
-				<label for="form3">Your name</label>
+				<label for="form3">Usuari</label>
 			  </div>
 			  <div class="md-form">
-				<i class="fa fa-envelope prefix grey-text"></i>
-				<input type="text" id="form2" class="form-control">
-				<label for="form2">Your email</label>
-			  </div>
-
-			  <div class="md-form">
-				<i class="fa fa-pencil prefix grey-text"></i>
-				<textarea type="text" id="form8" class="md-textarea"></textarea>
-				<label for="form8">Your message</label>
+				<i class="fa fa-key prefix grey-text"></i>
+				<input type="password" id="form2" class="form-control">
+				<label for="form2">Contrasenya</label>
 			  </div>
 
 			  <div class="text-center">
-				<button class="btn btn-indigo">Send</button>
-				<hr>
-				<fieldset class="form-check">
-				  <input type="checkbox" class="form-check-input" id="checkbox1">
-				  <label for="checkbox1" class="form-check-label dark-grey-text">Subscribe me to the newsletter</label>
-				</fieldset>
+				<button class="btn btn-indigo">Iniciar</button>
 			  </div>
 
 			</form>
