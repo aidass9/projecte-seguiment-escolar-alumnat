@@ -6,7 +6,9 @@ class DefaultController extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        if (!$_SESSION['profesor']) {
+        session_start();
+
+        if (!isset($_SESSION['usuario'])) {
             //Muestras errores (ejemplo
             self::mostrarAlert("Para acceder debes de estar registrado", 'error');
             redirect('Login');

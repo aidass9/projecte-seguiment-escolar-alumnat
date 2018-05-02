@@ -51,8 +51,8 @@
 
 			  <div class="md-form">
 				<i class="fa fa-user prefix grey-text"></i>
-				<input type="text" id="usuario" name="usuario" class="form-control">
-				<label for="usuario">Usuari</label>
+				<input type="text" id="documento" name="documento" class="form-control">
+				<label for="documento">Usuari</label>
 			  </div>
 			  <div class="md-form">
 				<i class="fa fa-key prefix grey-text"></i>
