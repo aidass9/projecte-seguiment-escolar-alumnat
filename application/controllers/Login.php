@@ -30,6 +30,7 @@ class Login extends CI_Controller {
         if(!$this->form_validation->run()) {
             //self:: -> Llamar a una funcion estatica definida en la mis clase
             self::mostrarAlert("Has d'introduir l'usuari i la contrasenya", "error");
+            $_SESSION['abrirLogin'] = true;
             redirect('/Login');
         }
 

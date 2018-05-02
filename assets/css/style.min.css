@@ -69,6 +69,10 @@ header,
     display: none;
 }
 
+.mostrarLogin {
+    display: block !important;
+}
+
 #mensajeBienvenida {
     padding-bottom: 150px;
 }

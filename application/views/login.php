@@ -33,8 +33,8 @@
 	  <!--Grid column-->
 
 	  <!--Grid column-->
-	  <div class="col-md-6 col-xl-5 mb-4" id="login">
-
+	  <div class="col-md-6 col-xl-5 mb-4 <?php if(isset($_SESSION['abrirLogin'])) echo 'mostrarLogin'?>" id="login" >
+            <?php if(isset($_SESSION['abrirLogin'])) unset($_SESSION['abrirLogin']) ?>
 		<!--Card-->
 		<div class="card div-login">
 
