@@ -42,7 +42,7 @@
 		  <div class="card-body">
 
 			<!-- Form -->
-			<form name="">
+              <?= form_open('Login/validarUsuario') ?>
 			  <!-- Heading -->
 			  <h3 class="dark-grey-text text-center">
 				<strong>INICIAR SESSIÓ</strong>
