@@ -21,4 +21,17 @@ class Login extends CI_Controller {
         $_SESSION['tipo_mensaje'] = $tipo_mensaje;
     }
 
+    public function validarUsuario() {
+        session_start();
+
+        $this->form_validation->set_rules('usuario', '','required');
+        $this->form_validation->set_rules('pass', '','required');
+
+        if(!$this->form_validation->run()) {
+            //self:: -> Llamar a una funcion estatica definida en la mis clase
+            self::mostrarAlert("Has d'introduir l'usuari i la contrasenya", "error");
+        }
+
+    }
+
 }

@@ -51,17 +51,17 @@
 
 			  <div class="md-form">
 				<i class="fa fa-user prefix grey-text"></i>
-				<input type="text" id="form3" class="form-control">
-				<label for="form3">Usuari</label>
+				<input type="text" id="usuario" class="form-control">
+				<label for="usuario">Usuari</label>
 			  </div>
 			  <div class="md-form">
 				<i class="fa fa-key prefix grey-text"></i>
-				<input type="password" id="form2" class="form-control">
-				<label for="form2">Contrasenya</label>
+				<input type="password" id="pass" class="form-control">
+				<label for="pass">Contrasenya</label>
 			  </div>
 
 			  <div class="text-center">
-				<button class="btn btn-indigo">Iniciar</button>
+				<button class="btn btn-indigo" id="boton-iniciar-sesion">Iniciar</button>
 			  </div>
 
 			</form>
