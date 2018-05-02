@@ -6,7 +6,7 @@ class Login extends CI_Controller {
 
     // Index -> es la primera funcion que se ejecuta
     // SI queremos otra pondremos Index/buscarUsuario
-    public function index() {   //Para cargar archivos CSS o poner datos como el titulo de la vist, el segundo es un array asociativo con los datos
+	public function index() {   //Para cargar archivos CSS o poner datos como el titulo de la vist, el segundo es un array asociativo con los datos
         $this->load->view('template/header', ['titulo' => 'Login']); // El primer parametro es el php 
         $this->load->view('template/mensaje'); //Plantilla que mostrará mensajes de error o correcto
         $this->load->view('login'); //Cargar la vista application/view/login.php
@@ -30,7 +30,7 @@ class Login extends CI_Controller {
         if(!$this->form_validation->run()) {
             //self:: -> Llamar a una funcion estatica definida en la mis clase
             self::mostrarAlert("Has d'introduir l'usuari i la contrasenya", "error");
-            redirect('Login');
+            redirect('/Login');
         }
 
     }

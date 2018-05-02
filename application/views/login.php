@@ -51,12 +51,12 @@
 
 			  <div class="md-form">
 				<i class="fa fa-user prefix grey-text"></i>
-				<input type="text" id="usuario" class="form-control">
+				<input type="text" id="usuario" name="usuario" class="form-control">
 				<label for="usuario">Usuari</label>
 			  </div>
 			  <div class="md-form">
 				<i class="fa fa-key prefix grey-text"></i>
-				<input type="password" id="pass" class="form-control">
+				<input type="password" id="pass" name="pass" class="form-control">
 				<label for="pass">Contrasenya</label>
 			  </div>
 
