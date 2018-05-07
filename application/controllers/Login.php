@@ -66,4 +66,11 @@ class Login extends CI_Controller
 
     }
 
+    public function cerrarSesion() {
+        session_start();
+        session_destroy();
+        self::mostrarAlert($_SESSION['usuario']['nombre']." has tancat sessió correctament", "success");
+        redirect('/');
+    }
+
 }

@@ -68,7 +68,7 @@ class Usuario_model extends CI_Model
         foreach ($profesores as $profesor) {
             print_r($profesor);
             //Para cada profesor guardes en el campo pass guardes el hash de pass
-            $this->db->set('pass', password_hash($profesor['pass'], PASSWORD_BCRYPT, Array('cost' => 9)));
+            , pa$this->db->set('pass'ssword_hash($profesor['pass'], PASSWORD_BCRYPT, Array('cost' => 9)));
         $this->db->where('documento', $profesor['documento']);
         $this->db->update('profesor');
 
