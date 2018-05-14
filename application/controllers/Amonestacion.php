@@ -8,6 +8,7 @@ class Amonestacion extends DefaultController {
         //Aqui cargaremos linrerial, helpes y modelo
         //Ejemplo de cargar modelo
         // $this->load->model('nombreModelo');
+        $this->load->model('Importacio_model');
     }
     
     
@@ -16,6 +17,21 @@ class Amonestacion extends DefaultController {
             //En este punto contactaremos con el modelo para cargar datos de la base de datos
             //Ejemplo:
             //$datos['nombreDato'] = nombreModelo->nombreFuncion()
+        $datos['grupos'] = $this->Importacio_model->selectorGrupos();
+        //print_r($datos['grupos']);
         $this->cargarVista('amonestacion', $datos); //Cargamos las vista mandandole los datos
+    }
+
+    public function importar() {
+        $resultado = $this->Importacio_model->importarGrupoProfesor();
+
+    }
+
+    public function cargarAlumnos() {
+        echo "hola";
+        $grupo = $this->input->post('grupo');
+        $datos['alumnos'] = $this->Importacio_model->selectorAlumnosPorGrupo($grupo);
+        //print_r($datos['alumnos']);
+        $this->cargarVista('observacionesAlumnos', $datos);
     }
 }

@@ -6,7 +6,9 @@ class DefaultController extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        session_start();
+        //session_start();
+
+        $this->load->library('session');
 
         if (!isset($_SESSION['usuario'])) {
             //Muestras errores (ejemplo

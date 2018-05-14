@@ -6,6 +6,7 @@ class Usuario_model extends CI_Model
     {
         parent::__construct();
         $this->load->database();
+        $this->load->library('session');
     }
 
     public function iniciarSesion($documento, $pass)
@@ -14,8 +15,17 @@ class Usuario_model extends CI_Model
         $usuario = $query->row_array();
         $correcto = password_verify($pass, $usuario['pass']);
 
+        $queryGrupoProfesor = $this->db->get('grupo_profesor');
+        $queryGrupoProfesor = $this->db->distinct('grupo');
+        $queryGrupoProfesor = $this->db->where('docente', '$usuario["documento"]');
+
+
+        //$queryGrupoProfesor = "SELECT DISTINCT grupo FROM grupo_profesor WHERE docente ='$usuario["documento"]'";
+
+
         if ($correcto) {
             $_SESSION['usuario'] = $usuario;
+            $_SESSION['dni'] = $documento;
             return true;
         }
     }
