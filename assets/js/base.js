@@ -12,5 +12,15 @@ $(() => {
 function mostrarLogin() {
     if ($('#login').css('display') !== 'block') {
         $('#login').slideToggle();
+        $('.boton-iniciar-sesion').css('display', "none");
     }
 }
+
+function borrarBuscador() {
+    $('#formulario-buscador input').val('');
+}
+
+// Material Select Initialization
+/*$(document).ready(function() {
+    $('.mdb-select').material_select();
+});*/

@@ -1,7 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$route['login'] = 'Login';
+$route['login'] = 'login';
+$route['anotacionesAvaluaciones'] = 'anotacionesAvaluaciones';
+$route['anotacionesAvaluaciones/(:any)'] = 'anotacionesAvaluaciones/$1';
 
 $route['(:any)'] = 'Amonestacion/$1';
 $route['default_controller'] = 'Amonestacion';

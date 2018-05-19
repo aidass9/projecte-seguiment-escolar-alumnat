@@ -69,25 +69,59 @@ class Importacio_model extends CI_Model
         }
     }
 
-    function selectorGrupos() {
+    function selectorGrupos()
+    {
         $dni = $_SESSION['dni'];
-        echo "DNI= ".$dni;
         $sql = "select distinct grupo from grupo_profesor where docente = ?";
 
-        $query = $this->db->query($sql,$dni);
+        $query = $this->db->query($sql, $dni);
 
-        if($query->num_rows() > 0) {
+        if ($query->num_rows() > 0) {
             return $query->result();
         }
     }
 
-    function selectorAlumnosPorGrupo($grupo) {
-        $sql = "SELECT * FROM alumno WHERE grupo = ? ORDER BY apellido1";
+    function selectorAlumnosPorGrupo($grupo, $nombre)
+    {
+        $sql = "SELECT * FROM alumno WHERE grupo = ?  AND nombre LIKE '%$nombre%' ORDER BY apellido1";
 
-        $query = $this->db->query($sql,$grupo);
 
-        if($query->num_rows() > 0) {
+        $sql = "select a.*, (select comentari from notesavaluacio n where n.alumne = a.NIA AND n.avaluacio = 3) AS tercera,
+	            (select comentari from notesavaluacio n where n.alumne = a.NIA AND n.avaluacio = 2) AS segona,
+                (select comentari from notesavaluacio n where n.alumne = a.NIA AND n.avaluacio = 1) AS primera,
+                (select comentari from notesavaluacio n where n.alumne = a.NIA AND n.avaluacio = 0) AS inicial
+                from alumno a WHERE grupo = ?  AND nombre LIKE '%$nombre%' ORDER BY a.apellido1";
+
+
+        /*$sql = "SELECT * FROM alumno a
+                   , notesavaluacio n
+                   WHERE grupo = ? AND  a.NIA = n.alumne
+                   ORDER BY 'apellido1'";*/
+
+
+        $query = $this->db->query($sql, $grupo);
+
+        if ($query->num_rows() > 0) {
             return $query->result();
         }
     }
+
+    /*function selectorObservaciones($nia)
+    {
+        //$sql = "SELECT * FROM notesavaluacio WHERE alumne = ?";
+
+        /*$sql = "select a.*, (select comentari from notesavaluacio n where n.alumne = a.NIA AND n.avaluacio = 3) AS tercera,
+	            (select comentari from notesavaluacio n where n.alumne = a.NIA AND n.avaluacio = 2) AS segona,
+                (select comentari from notesavaluacio n where n.alumne = a.NIA AND n.avaluacio = 1) AS primera,
+                (select comentari from notesavaluacio n where n.alumne = a.NIA AND n.avaluacio = 0) AS inicial
+                from alumno a ORDER BY a.apellido1";*/
+
+        //$sql = "select * from alumno a, notesavaluacio n where n.alumne = a.NIA ORDER BY a.apellido1";
+
+        //$query = $this->db->query($sql, $nia);
+
+        //if ($query->num_rows() > 0) {
+          //  return $query->result();
+        //}
+    //}
 }

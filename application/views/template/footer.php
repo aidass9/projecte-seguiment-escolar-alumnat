@@ -1,12 +1,12 @@
 <!--Footer-->
 <footer class="page-footer text-center font-small mt-4 wow fadeIn" id="footer">
 
-    <hr class="my-4">
+    <!--<hr class="my-4">-->
 
     <!--Copyright-->
-    <div class="footer-copyright py-3">
+    <!--<div class="footer-copyright py-3">
         © 2018 Copyright: Aida Soriano
-    </div>
+    </div>-->
     <!--/.Copyright-->
 
 </footer>

@@ -13,7 +13,7 @@
 	  <!--Grid column-->
 	  <div class="col-md-6 mb-4 white-text text-center text-md-left" id="mensajeBienvenida">
 
-		<h1 class="display-4 font-weight-bold">Seguiment alumnat IES Maria Enriquez</h1>
+		<h1 class="display-4 font-weight-bold titulo-login">Seguiment alumnat IES Maria Enriquez</h1>
 
 		<hr class="hr-light">
 
@@ -25,7 +25,7 @@
 		  <strong>Benvinguts a l'aplicación del institut IES Maria Enriquez per al seguiment escolar del alumnat.</strong>
           </p>
 
-		<button class="btn btn-indigo btn-lg" onclick="mostrarLogin()">Iniciar sessió
+		<button class="btn btn-indigo btn-lg boton-iniciar-sesion" onclick="mostrarLogin()">Iniciar sessió
               <i class="fa fa-graduation-cap ml-2"></i>
         </button>
 

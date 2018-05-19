@@ -28,10 +28,31 @@ class Amonestacion extends DefaultController {
     }
 
     public function cargarAlumnos() {
-        echo "hola";
         $grupo = $this->input->post('grupo');
-        $datos['alumnos'] = $this->Importacio_model->selectorAlumnosPorGrupo($grupo);
-        //print_r($datos['alumnos']);
+
+
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
+
+        if(!isset($grupo)) {
+            $grupo = $_SESSION['grupo'];
+        }
+        else {
+            $_SESSION['grupo'] = $grupo;
+
+        }
+
+        $buscadorAlumno = $this->input->post('buscadorAlumno');
+
+        $_SESSION['buscadorAlumno'] = $buscadorAlumno;
+
+        $datos['alumnos'] = $this->Importacio_model->selectorAlumnosPorGrupo($grupo, $buscadorAlumno);
+       //print_r($datos['alumnos']);
+        $datos['titulo'] = "Llistat alumnat: " . $grupo;
+
+       // $datos['observaciones'] = $this->Impostacio_model->selectorObservaciones($nia);
+
         $this->cargarVista('observacionesAlumnos', $datos);
     }
 }

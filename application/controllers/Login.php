@@ -41,7 +41,7 @@ class Login extends CI_Controller
             //self:: -> Llamar a una funcion estatica definida en la mis clase
             self::mostrarAlert("Has d'introduir l'usuari i la contrasenya", "error");
             $_SESSION['abrirLogin'] = true;
-            redirect('/Login');
+            redirect('/login');
         } else {
             //Recoger datos formulario
             $documento = $this->input->post('documento');
@@ -60,7 +60,7 @@ class Login extends CI_Controller
 
             else {
                 self::mostrarAlert("No has introduït bé l'usuari o la contrasenya", "error");
-                redirect('/Login');
+                redirect('/login');
             }
         }
 
@@ -70,7 +70,7 @@ class Login extends CI_Controller
         session_start();
         session_destroy();
         self::mostrarAlert($_SESSION['usuario']['nombre']." has tancat sessió correctament", "success");
-        redirect('/');
+        redirect('/login');
     }
 
 }

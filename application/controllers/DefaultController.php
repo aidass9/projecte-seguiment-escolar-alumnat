@@ -15,6 +15,20 @@ class DefaultController extends CI_Controller {
             self::mostrarAlert("Para acceder debes de estar registrado", 'error');
             redirect('Login');
         }
+        $this->load->library('grocery_CRUD');
+    }
+
+    public function _example_output($output = null)
+    {
+        $this->load->view('example.php',(array)$output);
+    }
+
+    public function notesavaluacio()
+    {
+
+        $output = $this->grocery_crud->render();
+
+        $this->_example_output($output);
     }
 
     public function cargarVista($vista, $datos) {
