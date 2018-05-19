@@ -1,6 +1,7 @@
 <?php
 
-class AnotacionesAvaluaciones extends CI_Controller
+require_once("DefaultController.php");
+class AnotacionesAvaluaciones extends DefaultController
 {
 
     public function __construct()
@@ -20,6 +21,7 @@ class AnotacionesAvaluaciones extends CI_Controller
         $numEvaluacion = "";
 
         $nia = $this->input->post("nia");
+        print_r($nia);
 
         $avalInicial = $this->input->post("0avaluacio", 0);
         if($avalInicial != 0) {
@@ -34,8 +36,7 @@ class AnotacionesAvaluaciones extends CI_Controller
             );
             print_r($datos);
 
-            $this->AnotacionesAvaluaciones_model->guardarAnotaciones($datos);
-            //redirect('/login');
+
         }
 
         $primeraAval = $this->input->post("1avaluacio", 0);
@@ -50,10 +51,9 @@ class AnotacionesAvaluaciones extends CI_Controller
                 'comentari' => $comentario
 
             );
-            print_r($datos);
 
-            $this->AnotacionesAvaluaciones_model->guardarAnotaciones($datos);
-            //redirect('/login');
+            self::actualizarAvaluacio($datos, $nia);
+
         }
 
         $segonaAval = $this->input->post("2avaluacio", 0);
@@ -69,8 +69,7 @@ class AnotacionesAvaluaciones extends CI_Controller
             );
             print_r($datos);
 
-            $this->AnotacionesAvaluaciones_model->guardarAnotaciones($datos);
-            //redirect('/login');
+            self::actualizarAvaluacio($datos, $nia);
         }
         $terceraAval = $this->input->post("3avaluacio", 0);
         if($terceraAval != "") {
@@ -85,30 +84,30 @@ class AnotacionesAvaluaciones extends CI_Controller
             );
             print_r($datos);
 
-            $this->AnotacionesAvaluaciones_model->guardarAnotaciones($datos, $nia);
-            //redirect('/login');
+            self::actualizarAvaluacio($datos, $nia);
         }
 
-
-
-        /*$nia = "10002960";
-        $terceraAval = "no trabaja";*/
-
-    echo $nia."<br>";
-    echo $avalInicial."<br>";
-    //echo $primeraAval."<br>";
-    //echo $segonaAval."<br>";
-    //echo $terceraAval."<br>";
-    //echo $comentario;
         $datos = array(
             'alumne' => $nia,
             'avaluacio' => $numEvaluacion,
             'comentari' => $comentario
 
         );
-        print_r($datos);
 
-        $this->AnotacionesAvaluaciones_model->guardarAnotaciones($datos, $nia);
-        //redirect('/login');
+
+        self::actualizarAvaluacio($datos, $nia);
+    }
+
+    function actualizarAvaluacio($datos, $nia) {
+
+        if( $this->AnotacionesAvaluaciones_model->guardarAnotaciones($datos, $nia)) {
+            self::mostrarAlert("Avaluació actualizada amb èxit", "success");
+        }
+        else {
+            self::mostrarAlert("Error al actualizar l'avaluació", "error");
+        }
+
+
+        redirect('/cargarAlumnos');
     }
 }

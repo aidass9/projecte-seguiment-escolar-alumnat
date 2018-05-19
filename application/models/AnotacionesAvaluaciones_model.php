@@ -16,7 +16,9 @@ class AnotacionesAvaluaciones_model extends CI_Model {
         //$sql = "INSERT INTO notesavaluacio WHERE alumne = $alumno->NIA"
         $this->db->where('alumne', $nia);
         $this->db->where('avaluacio', 3);
-        $this->db->update('notesavaluacio', $datos);
+        return $this->db->update('notesavaluacio', $datos);
+
+
 
         //$this->db->insert('notesavaluacio', $datos);
 

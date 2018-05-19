@@ -84,7 +84,7 @@
                         <div class="form-group">
                             <label for="comment">Avaluació inicial</label>
                             <textarea class="form-control" rows="5" name="0avaluacio"
-                                      id="0avaluacio" readonly="readonly"></textarea>
+                                      id="0avaluacio" readonly="readonly"><?= $alumno->inicial ?></textarea>
                         </div>
                     </td>
 
@@ -92,7 +92,7 @@
                         <div class="form-group">
                             <label for="comment">1ª avaluació</label>
                             <textarea class="form-control" rows="5" name="1avaluacio"
-                                      id="1avaluacio" readonly="readonly"></textarea>
+                                      id="1avaluacio" readonly="readonly"><?= $alumno->primera ?></textarea>
                         </div>
                     </td>
 
@@ -100,7 +100,7 @@
                         <div class="form-group">
                             <label for="comment">2ª avaluació</label>
                             <textarea class="form-control" rows="5" name="2avaluacio"
-                                      id="2avaluacio" readonly="readonly"></textarea>
+                                      id="2avaluacio" ><?= $alumno->segona ?></textarea>
                         </div>
                     </td>
 

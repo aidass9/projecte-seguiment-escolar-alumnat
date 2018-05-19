@@ -83,8 +83,7 @@ class Importacio_model extends CI_Model
 
     function selectorAlumnosPorGrupo($grupo, $nombre)
     {
-        $sql = "SELECT * FROM alumno WHERE grupo = ?  AND nombre LIKE '%$nombre%' ORDER BY apellido1";
-
+        //$sql = "SELECT * FROM alumno WHERE grupo = ?  AND nombre LIKE '%$nombre%' ORDER BY apellido1";
 
         $sql = "select a.*, (select comentari from notesavaluacio n where n.alumne = a.NIA AND n.avaluacio = 3) AS tercera,
 	            (select comentari from notesavaluacio n where n.alumne = a.NIA AND n.avaluacio = 2) AS segona,
