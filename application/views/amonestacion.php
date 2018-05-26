@@ -3,7 +3,7 @@
         <h2>Tria un grup</h2>
 
         <form method="POST" action="<?php echo site_url('cargarAlumnos') ?>">
-            <select name="grupo" class="select-grupos" >
+            <select name="grupo" class="select-grupos">
                 <?php
                     foreach ($grupos as $grupo) {
                 ?>

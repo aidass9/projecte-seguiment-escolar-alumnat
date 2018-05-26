@@ -7,11 +7,12 @@ class Login extends CI_Controller
     function __construct() {
         parent::__construct();
         $this->load->model('usuario_model');
+
     }
 
     // Index -> es la primera funcion que se ejecuta
     // SI queremos otra pondremos Index/buscarUsuario
-    public function index()
+    public function index() //Poner de nombre Login
     {   //Para cargar archivos CSS o poner datos como el titulo de la vist, el segundo es un array asociativo con los datos
         $this->load->view('template/header', ['titulo' => 'Login']); // El primer parametro es el php 
         $this->load->view('template/mensaje'); //Plantilla que mostrará mensajes de error o correcto

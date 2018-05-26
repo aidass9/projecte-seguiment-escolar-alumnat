@@ -1,16 +1,11 @@
-<!-- Full Page Intro -->
 <div class="view full-page-intro" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/78.jpg'); background-repeat: no-repeat; background-size: cover;">
 
-<!-- Mask & flexbox options-->
 <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
 
-  <!-- Content -->
   <div class="container">
 
-	<!--Grid row-->
 	<div class="row wow fadeIn">
 
-	  <!--Grid column-->
 	  <div class="col-md-6 mb-4 white-text text-center text-md-left" id="mensajeBienvenida">
 
 		<h1 class="display-4 font-weight-bold titulo-login">Seguiment alumnat IES Maria Enriquez</h1>
@@ -30,20 +25,16 @@
         </button>
 
 	  </div>
-	  <!--Grid column-->
 
-	  <!--Grid column-->
 	  <div class="col-md-6 col-xl-5 mb-4 <?php if(isset($_SESSION['abrirLogin'])) echo 'mostrarLogin'?>" id="login" >
             <?php if(isset($_SESSION['abrirLogin'])) unset($_SESSION['abrirLogin']) ?>
-		<!--Card-->
+
 		<div class="card div-login">
 
-		  <!--Card content-->
 		  <div class="card-body">
 
-			<!-- Form -->
               <?= form_open('Login/validarUsuario') ?>
-			  <!-- Heading -->
+
 			  <h3 class="dark-grey-text text-center">
 				<strong>INICIAR SESSIÓ</strong>
 			  </h3>
@@ -65,24 +56,17 @@
 			  </div>
 
 			</form>
-			<!-- Form -->
 
 		  </div>
 
 		</div>
-		<!--/.Card-->
 
 	  </div>
-	  <!--Grid column-->
 
 	</div>
-	<!--Grid row-->
 
   </div>
-  <!-- Content -->
 
 </div>
-<!-- Mask & flexbox options-->
 
 </div>
-<!-- Full Page Intro -->

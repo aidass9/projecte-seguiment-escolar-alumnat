@@ -17,10 +17,6 @@ class Importacio_model extends CI_Model
     public function __construct()
     {
         // parent::__construct();
-        $this->xml_file = "C:\\xampp\htdocs\amonestacion\importar\imexalum_alumnos_cursos_grupos_horario_docentes.xml";
-        $this->count = 0;
-        $this->xml = file_get_contents($this->xml_file);
-        $this->sxe = new SimpleXMLElement($this->xml);
 
         $this->load->database();
         $this->load->helper('url');
@@ -30,11 +26,10 @@ class Importacio_model extends CI_Model
 
     public function importarGrupoProfesor()
     {
+        $this->xml_file = "C:\\xampp\htdocs\amonestacion\importar\imexalum_alumnos_cursos_grupos_horario_docentes.xml";
+        $this->xml = file_get_contents($this->xml_file);
+        $this->sxe = new SimpleXMLElement($this->xml);
 
-        $NIA = Array();
-        $this->count = 0;
-        $this->countAct = 0;
-        $fecha;
         //funcio per a obrir fitxer xml
         foreach ($this->sxe->xpath('//horario_grupo') as $horarioGrupo) {
             //print_r($horarioGrupo);
@@ -63,6 +58,46 @@ class Importacio_model extends CI_Model
             );
 
             $this->db->insert('grupo_profesor', $data);
+
+            //select distinct grupo from grupo_profesor where docente = '070984654F'
+
+        }
+    }
+
+    public function importarAsignaturas()
+    {
+        $this->xml_file = "C:\\xampp\htdocs\amonestacion\importar\imexalum_asignaturas.xml";
+
+        $this->xml = file_get_contents($this->xml_file);
+        $this->sxe = new SimpleXMLElement($this->xml);
+
+
+        //funcio per a obrir fitxer xml
+        foreach ($this->sxe->xpath('//contenido') as $asignatura) {
+            print_r($asignatura);
+
+            echo "---------<hr>";
+
+            $asignatura_curso = $asignatura['curso'];
+            $asignatura_codigo = $asignatura['codigo'];
+            $asignatura_descrip_cas = $asignatura['nombre_cas'];
+            $asignatura_descrip_val = $asignatura['nombre_val'];
+
+            //echo $docente;
+
+
+            $data = array(
+                'asignatura_curso' => $asignatura_curso,
+                'asignatura_codigo' => $asignatura_codigo,
+                'asignatura_nombre_cas' => $asignatura_descrip_cas,
+                'asignatura_nombre_val' => $asignatura_descrip_val,
+
+
+            );
+
+            print_r($data);
+
+            $this->db->insert('asignaturas', $data);
 
             //select distinct grupo from grupo_profesor where docente = '070984654F'
 

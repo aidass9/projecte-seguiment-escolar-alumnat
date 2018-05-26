@@ -10,6 +10,8 @@
 //?>
 </table>-->
 
+<?php $evaluacionActiva = $this->session->userdata('evaluacionActiva') ?>
+
 <div class="card p-2 mb-5">
 
 
@@ -32,6 +34,7 @@
 
 <div class="table-wrapper">
     <h2><?= $_SESSION['grupo'] ?></h2>
+
 
     <!--<h2><?php $datos->grupo ?></h2>-->
 
@@ -61,18 +64,19 @@
                     echo "Cognoms: " . $alumno->apellido1 . " " . $alumno->apellido2 . " <br>";
                     echo "Nom: " . $alumno->nombre . " <br>";
                     echo "Data naixement: " . $alumno->fecha_nac . " <br>";
-                    echo "Teléfono 1: " . $alumno->telefono1 . " <br>";
-                    echo "Teléfono 2: " . $alumno->telefono2 . " <br>";
-                    echo "Teléfono 3: " . $alumno->telefono3 . " <br>";
+                    if($alumno->telefono1 != "") echo "Teléfono 1: " . $alumno->telefono1 . " <br>";
+                    if($alumno->telefono2 != "") echo "Teléfono 2: " . $alumno->telefono2 . " <br>";
+                    if($alumno->telefono3 != "") echo "Teléfono 3: " . $alumno->telefono3 . " <br>";
                     //echo "comentari: " . $alumno->comentari . " <br>";
+                    echo "Evaluacion activa" .$evaluacionActiva;
                     ?>
 
-                    <select name="grupo" class="select-grupos">
+                    <!--<select name="grupo" class="select-grupos">
                         <option>Avaluació inicial</option>
                         <option>1ª avaluació</option>
                         <option>2ª avaluació</option>
                         <option>3ª avaluació</option>
-                    </select>
+                    </select>-->
 
                     <?php
                     echo "</td>";
@@ -84,7 +88,7 @@
                         <div class="form-group">
                             <label for="comment">Avaluació inicial</label>
                             <textarea class="form-control" rows="5" name="0avaluacio"
-                                      id="0avaluacio" readonly="readonly"><?= $alumno->inicial ?></textarea>
+                                      id="0avaluacio" <?php if( $evaluacionActiva != '0') {?> readonly="readonly" <?php } ?>><?= $alumno->inicial ?></textarea>
                         </div>
                     </td>
 
@@ -92,7 +96,7 @@
                         <div class="form-group">
                             <label for="comment">1ª avaluació</label>
                             <textarea class="form-control" rows="5" name="1avaluacio"
-                                      id="1avaluacio" readonly="readonly"><?= $alumno->primera ?></textarea>
+                                      id="1avaluacio" <?php if( $evaluacionActiva != '1') { ?> readonly="readonly" <?php } ?>><?= $alumno->primera ?></textarea>
                         </div>
                     </td>
 
@@ -100,7 +104,7 @@
                         <div class="form-group">
                             <label for="comment">2ª avaluació</label>
                             <textarea class="form-control" rows="5" name="2avaluacio"
-                                      id="2avaluacio" ><?= $alumno->segona ?></textarea>
+                                      id="2avaluacio" <?php if( $evaluacionActiva != '2') { ?> readonly="readonly" <?php } ?>><?= $alumno->segona ?></textarea>
                         </div>
                     </td>
 
@@ -108,12 +112,12 @@
                         <div class="form-group">
                             <label for="comment">3ª avaluació</label>
                             <textarea class="form-control" rows="5" name="3avaluacio"
-                                      id="3avaluacio"><?= $alumno->tercera ?></textarea>
+                                      id="3avaluacio"<?php if( $evaluacionActiva != '3') { ?> readonly="readonly"  <?php } ?> ><?= $alumno->tercera ?></textarea>
                         </div>
                     </td>
 
                     <td>
-                        <button type="submit" class="btn btn-primary boton-ver-alumnos">Vore alumnes</button>
+                        <button type="submit" class="btn btn-primary boton-guardar-observaciones">Guardar</button>
                         <!--<input type='submit' name="guardarAnotacion" class='btn btn-info botones-editar-guardar-alumnos' value='Guardar'>-->
                     </td>
 

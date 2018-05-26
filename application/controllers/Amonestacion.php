@@ -9,6 +9,8 @@ class Amonestacion extends DefaultController {
         //Ejemplo de cargar modelo
         // $this->load->model('nombreModelo');
         $this->load->model('Importacio_model');
+        $this->load->library('session');
+        $this->session->set_userdata('evaluacionActiva', '2');
     }
     
     
@@ -20,6 +22,14 @@ class Amonestacion extends DefaultController {
         $datos['grupos'] = $this->Importacio_model->selectorGrupos();
         //print_r($datos['grupos']);
         $this->cargarVista('amonestacion', $datos); //Cargamos las vista mandandole los datos
+    }
+
+    public function login() //Poner de nombre Login
+    {   //Para cargar archivos CSS o poner datos como el titulo de la vist, el segundo es un array asociativo con los datos
+        $this->load->view('template/header', ['titulo' => 'Login']); // El primer parametro es el php
+        $this->load->view('template/mensaje'); //Plantilla que mostrará mensajes de error o correcto
+        $this->load->view('login'); //Cargar la vista application/view/login.php
+        $this->load->view('template/footer'); //Cargar archivos JS
     }
 
     public function importar() {
@@ -54,5 +64,10 @@ class Amonestacion extends DefaultController {
        // $datos['observaciones'] = $this->Impostacio_model->selectorObservaciones($nia);
 
         $this->cargarVista('observacionesAlumnos', $datos);
+    }
+
+    public function importarAsignaturas() {
+        $resultado = $this->Importacio_model->importarAsignaturas();
+
     }
 }

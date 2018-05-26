@@ -1,6 +1,7 @@
 <?php
 
 require_once("DefaultController.php");
+
 class AnotacionesAvaluaciones extends DefaultController
 {
 
@@ -13,101 +14,49 @@ class AnotacionesAvaluaciones extends DefaultController
         $this->load->model('AnotacionesAvaluaciones_model');
     }
 
-    function index() {
-        echo "controlador anotaciones evaluaciones";
-    }
-    function guardarAnotaciones() {
-        $comentario = "";
-        $numEvaluacion = "";
+    function guardarAnotaciones()
+    {
+        $comentario = NULL;
+        $numEvaluacion = NULL;
 
         $nia = $this->input->post("nia");
-        print_r($nia);
 
         $avalInicial = $this->input->post("0avaluacio", 0);
-        if($avalInicial != 0) {
+        if ($avalInicial != 0) {
             $numEvaluacion = 0;
             $comentario = $avalInicial;
-
-            $datos = array(
-                'alumne' => $nia,
-                'avaluacio' => $numEvaluacion,
-                'comentari' => $comentario
-
-            );
-            print_r($datos);
-
-
         }
 
         $primeraAval = $this->input->post("1avaluacio", 0);
-
-        if($primeraAval != "") {
+        if ($primeraAval != "") {
             $numEvaluacion = 1;
             $comentario = $primeraAval;
-
-            $datos = array(
-                'alumne' => $nia,
-                'avaluacio' => $numEvaluacion,
-                'comentari' => $comentario
-
-            );
-
-            self::actualizarAvaluacio($datos, $nia);
-
         }
 
         $segonaAval = $this->input->post("2avaluacio", 0);
-        if($segonaAval != "") {
+        if ($segonaAval != "") {
             $numEvaluacion = 2;
             $comentario = $segonaAval;
-
-            $datos = array(
-                'alumne' => $nia,
-                'avaluacio' => $numEvaluacion,
-                'comentari' => $comentario
-
-            );
-            print_r($datos);
-
-            self::actualizarAvaluacio($datos, $nia);
         }
+
         $terceraAval = $this->input->post("3avaluacio", 0);
-        if($terceraAval != "") {
+        if ($terceraAval != "") {
             $numEvaluacion = 3;
             $comentario = $terceraAval;
-
-            $datos = array(
-                'alumne' => $nia,
-                'avaluacio' => $numEvaluacion,
-                'comentari' => $comentario
-
-            );
-            print_r($datos);
-
-            self::actualizarAvaluacio($datos, $nia);
         }
 
-        $datos = array(
-            'alumne' => $nia,
-            'avaluacio' => $numEvaluacion,
-            'comentari' => $comentario
+        $datos = array('alumne' => $nia, 'avaluacio' => $numEvaluacion, 'comentari' => $comentario);
 
-        );
-
-
-        self::actualizarAvaluacio($datos, $nia);
+        if ($numEvaluacion !== null) self::actualizarAvaluacio($datos, $nia);
     }
 
-    function actualizarAvaluacio($datos, $nia) {
-
-        if( $this->AnotacionesAvaluaciones_model->guardarAnotaciones($datos, $nia)) {
+    function actualizarAvaluacio($datos, $nia)
+    {
+        if ($this->AnotacionesAvaluaciones_model->guardarAnotaciones($datos, $nia)) {
             self::mostrarAlert("Avaluació actualizada amb èxit", "success");
-        }
-        else {
+        } else {
             self::mostrarAlert("Error al actualizar l'avaluació", "error");
         }
-
-
         redirect('/cargarAlumnos');
     }
 }

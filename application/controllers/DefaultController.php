@@ -12,13 +12,13 @@ class DefaultController extends CI_Controller {
 
         if (!isset($_SESSION['usuario'])) {
             //Muestras errores (ejemplo
-            self::mostrarAlert("Para acceder debes de estar registrado", 'error');
+            self::mostrarAlert("Per a accedir, has de estar registrat", 'error');
             redirect('Login');
         }
         $this->load->library('grocery_CRUD');
     }
 
-    public function _example_output($output = null)
+    /*public function _example_output($output = null)
     {
         $this->load->view('example.php',(array)$output);
     }
@@ -29,7 +29,7 @@ class DefaultController extends CI_Controller {
         $output = $this->grocery_crud->render();
 
         $this->_example_output($output);
-    }
+    }*/
 
     public function cargarVista($vista, $datos) {
         $this->load->view('template/header', $datos);

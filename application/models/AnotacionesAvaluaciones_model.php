@@ -15,7 +15,8 @@ class AnotacionesAvaluaciones_model extends CI_Model {
     function guardarAnotaciones($datos, $nia) {
         //$sql = "INSERT INTO notesavaluacio WHERE alumne = $alumno->NIA"
         $this->db->where('alumne', $nia);
-        $this->db->where('avaluacio', 3);
+        $this->db->where('avaluacio', $this->session->userdata('evaluacionActiva'));
+        echo "evaluacion activa: ". $this->session->userdata('$evaluacionActiva');
         return $this->db->update('notesavaluacio', $datos);
 
 

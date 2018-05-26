@@ -15,6 +15,9 @@
         <link rel="stylesheet" href="<?= base_url() ?>assets\css\style.min.css" >
 
 
+
+
+
         <!--<link href="https://fonts.googleapis.com/css?family=Inconsolata|Pacifico|Oswald" rel="stylesheet">-->
     <!--    <link rel="stylesheet" href="<?= base_url() ?>assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="<?= base_url() ?>assets/css/tether.css">

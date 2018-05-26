@@ -49,23 +49,6 @@ class Usuario_model extends CI_Model
         return password_hash($password, PASSWORD_DEFAULT, Array('cost' => 9));
     }
 
-
-    /*public function borrar($id)
-    {
-        if (!($this->db->delete('usuarios', array('user_id' => $id)))) {
-            $_SESSION['error'] = "Ha habido un error al borrar el usuario con id $id";
-        } else {
-            $_SESSION['mensaje'] = "Usuario con id $id borrado con éxito";
-        }
-    }*/
-    /*    public function obtenerPorId($id)
-        {
-            $this->db->select('user_id, user_login, user_rol_id, user_name');
-            $query = $this->db->get_where('usuarios', Array('user_id' => $id));
-            return $query->row_array();
-        }*/
-
-
 }
 /*
  *
