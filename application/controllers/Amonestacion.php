@@ -10,7 +10,7 @@ class Amonestacion extends DefaultController {
         // $this->load->model('nombreModelo');
         $this->load->model('Importacio_model');
         $this->load->library('session');
-        $this->session->set_userdata('evaluacionActiva', '2');
+        $this->session->set_userdata('evaluacionActiva', '3');
     }
     
     

@@ -15,16 +15,23 @@
 <div class="card p-2 mb-5">
 
 
-    <div class="col-lg-3 col-md-6">
+    <div class="col-lg-3 div-buscador-volver-atras">
 
         <form id="formulario-buscador" class="form-inline mt-2 ml-2" method="POST" action="">
             <input class="form-control my-0 py-0" name="buscadorAlumno" value="<?= $_SESSION['buscadorAlumno'] ?>"
                    type="text" placeholder="Buscar alumne" style="max-width: 150px;">
             <button class="btn btn-sm btn-primary ml-2 px-1" type="submit"><i class="fa fa-search"></i></button>
-            <button class="btn btn-sm btn-primary ml-2 px-1" onclick="borrarBuscador()"><i class="fa fa-search"></i>
+            <button class="btn btn-sm btn-primary ml-2 px-1" onclick="borrarBuscador()"><i class="fa fa-times-circle"></i>
             </button>
 
         </form>
+
+        <div class="div-btn-cerrar-sesion">
+            <a href="<?= site_url('login/volverElegirGrupo') ?>">
+                <button class="btn btn-light my-2 my-sm-0 pull-right" id="boton-cerrar-sesion" type="submit">Tornar enrere</button>
+            </a>
+        </div>
+
 
     </div>
 
