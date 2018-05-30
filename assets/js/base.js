@@ -1,6 +1,6 @@
 $(() => {
     
-            /*Si el mesaje de error es diferente a vacio, dependiento del mensaje mostrará un tipo de error u otro*/
+	/*Si el mesaje de error es diferente a vacio, dependiento del mensaje mostrará un tipo de error u otro*/
 	if (mensaje) {
 		if (tipoMensaje === 'error') toastr.error(mensaje);
 		else if (tipoMensaje === 'success')	toastr.success(mensaje);
@@ -19,8 +19,3 @@ function mostrarLogin() {
 function borrarBuscador() {
     $('#formulario-buscador input').val('');
 }
-
-// Material Select Initialization
-/*$(document).ready(function() {
-    $('.mdb-select').material_select();
-});*/

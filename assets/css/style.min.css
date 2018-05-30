@@ -151,6 +151,7 @@ html, body, header, .view {
     bottom: 0;
     width: 100%;
     z-index: 10;*/
+    margin-top: 0px !important;
 }
 
 .div-login {
@@ -215,7 +216,6 @@ body {
 
 .div-elegir-grupo {
     text-align: center;
-    /*border: 1px solid red;*/
 }
 
 .boton-ver-alumnos {
@@ -237,3 +237,4 @@ body {
     evento onchange -> poner display block el seleccionado
 
 */
+

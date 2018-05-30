@@ -3,25 +3,23 @@
 class AnotacionesAvaluaciones_model extends CI_Model {
 
     public function __construct() {
-        parent::__construct(); //Necesario para que carge el controlador y tambien valide si hay sesión o no
-        //Aqui cargaremos linrerial, helpes y modelo
-        //Ejemplo de cargar modelo
-        // $this->load->model('nombreModelo');
+        parent::__construct();
 
         $this->load->database();
         $this->load->helper('url');
     }
 
     function guardarAnotaciones($datos, $nia) {
-        //$sql = "INSERT INTO notesavaluacio WHERE alumne = $alumno->NIA"
+
+        $evaluacion = $this->session->userdata('evaluacionActiva');
         $this->db->where('alumne', $nia);
-        $this->db->where('avaluacio', $this->session->userdata('evaluacionActiva'));
-        echo "evaluacion activa: ". $this->session->userdata('$evaluacionActiva');
-        return $this->db->update('notesavaluacio', $datos);
+        $this->db->where('avaluacio', $evaluacion);
+        print_r($datos);
+        print_r($evaluacion);
+
+        return $this->db->update('notesavaluacio', ['comentari' => $datos['comentario'][$evaluacion]] );
 
 
-
-        //$this->db->insert('notesavaluacio', $datos);
 
     }
 

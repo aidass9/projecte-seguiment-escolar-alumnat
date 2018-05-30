@@ -1,15 +1,3 @@
-<!--<table border="1">
-    //<?php
-//foreach ($alumnos as $alumno) {
-//  echo "<tr>";
-//  echo "<td>" . $alumno->apellido1 . "</td>";
-//  echo "<td>" . $alumno->nombre . "</td>";
-//  echo "<td>" . $alumno->telefono1 . "</td>";
-//  echo "</tr>";
-//}
-//?>
-</table>-->
-
 <?php $evaluacionActiva = $this->session->userdata('evaluacionActiva') ?>
 
 <div class="card p-2 mb-5">
@@ -30,6 +18,18 @@
             <a href="<?= site_url('login/volverElegirGrupo') ?>">
                 <button class="btn btn-light my-2 my-sm-0 pull-right" id="boton-cerrar-sesion" type="submit">Tornar enrere</button>
             </a>
+        </div>
+
+        <div class="div-select-evaluacion">
+            <form name="formularioSeleccionarEvaluacion" method="POST">
+                <select name="selectEvaluacion" onchange="this.form.submit()">
+                    <option value="0">Avalució 0</option>
+                    <option value="1">1ª avaluació</option>
+                    <option value="2">2ª avaluació</option>
+                    <option value="3">3ª avaluació</option>
+                </select>
+            </form>
+
         </div>
 
 
@@ -74,16 +74,7 @@
                     if($alumno->telefono1 != "") echo "Teléfono 1: " . $alumno->telefono1 . " <br>";
                     if($alumno->telefono2 != "") echo "Teléfono 2: " . $alumno->telefono2 . " <br>";
                     if($alumno->telefono3 != "") echo "Teléfono 3: " . $alumno->telefono3 . " <br>";
-                    //echo "comentari: " . $alumno->comentari . " <br>";
-                    echo "Evaluacion activa" .$evaluacionActiva;
                     ?>
-
-                    <!--<select name="grupo" class="select-grupos">
-                        <option>Avaluació inicial</option>
-                        <option>1ª avaluació</option>
-                        <option>2ª avaluació</option>
-                        <option>3ª avaluació</option>
-                    </select>-->
 
                     <?php
                     echo "</td>";
@@ -125,7 +116,6 @@
 
                     <td>
                         <button type="submit" class="btn btn-primary boton-guardar-observaciones">Guardar</button>
-                        <!--<input type='submit' name="guardarAnotacion" class='btn btn-info botones-editar-guardar-alumnos' value='Guardar'>-->
                     </td>
 
 
@@ -141,8 +131,5 @@
         </tbody>
 
     </table>
-
-    <!--<hr class="my-0">-->
-
 
 </div>

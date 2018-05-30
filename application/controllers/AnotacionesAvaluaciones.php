@@ -7,47 +7,40 @@ class AnotacionesAvaluaciones extends DefaultController
 
     public function __construct()
     {
-        parent::__construct(); //Necesario para que carge el controlador y tambien valide si hay sesión o no
-        //Aqui cargaremos linrerial, helpes y modelo
-        //Ejemplo de cargar modelo
-        // $this->load->model('nombreModelo');
+        parent::__construct();
         $this->load->model('AnotacionesAvaluaciones_model');
     }
 
     function guardarAnotaciones()
     {
-        $comentario = NULL;
-        $numEvaluacion = NULL;
+        $comentarios = [];
 
         $nia = $this->input->post("nia");
 
         $avalInicial = $this->input->post("0avaluacio", 0);
         if ($avalInicial != 0) {
-            $numEvaluacion = 0;
-            $comentario = $avalInicial;
+            $comentarios['0'] = $avalInicial;
+
         }
 
         $primeraAval = $this->input->post("1avaluacio", 0);
         if ($primeraAval != "") {
-            $numEvaluacion = 1;
-            $comentario = $primeraAval;
+            $comentarios['1'] = $primeraAval;
         }
 
         $segonaAval = $this->input->post("2avaluacio", 0);
         if ($segonaAval != "") {
-            $numEvaluacion = 2;
-            $comentario = $segonaAval;
+            $comentarios['2'] = $segonaAval;
         }
 
         $terceraAval = $this->input->post("3avaluacio", 0);
         if ($terceraAval != "") {
-            $numEvaluacion = 3;
-            $comentario = $terceraAval;
+            $comentarios['3'] = $terceraAval;
         }
 
-        $datos = array('alumne' => $nia, 'avaluacio' => $numEvaluacion, 'comentari' => $comentario);
+        $datos = array('alumne' => $nia, 'comentario' => $comentarios);
 
-        if ($numEvaluacion !== null) self::actualizarAvaluacio($datos, $nia);
+        if (count($comentarios) !== 0) self::actualizarAvaluacio($datos, $nia);
     }
 
     function actualizarAvaluacio($datos, $nia)

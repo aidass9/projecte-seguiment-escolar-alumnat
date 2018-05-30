@@ -1,4 +1,4 @@
-<div class="view full-page-intro" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/78.jpg'); background-repeat: no-repeat; background-size: cover;">
+<div class="view full-page-intro" style="background-image: url('<?= base_url() ?>assets/img/background.jpg'); background-repeat: no-repeat; background-size: cover;">
 
 <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
 

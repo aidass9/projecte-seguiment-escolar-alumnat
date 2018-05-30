@@ -19,10 +19,6 @@ class Usuario_model extends CI_Model
         $queryGrupoProfesor = $this->db->distinct('grupo');
         $queryGrupoProfesor = $this->db->where('docente', '$usuario["documento"]');
 
-
-        //$queryGrupoProfesor = "SELECT DISTINCT grupo FROM grupo_profesor WHERE docente ='$usuario["documento"]'";
-
-
         if ($correcto) {
             $_SESSION['usuario'] = $usuario;
             $_SESSION['dni'] = $documento;
