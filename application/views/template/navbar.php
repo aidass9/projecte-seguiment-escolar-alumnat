@@ -15,7 +15,3 @@
 
     </div>
 </nav>
-
-<div class="espacio-nav">
-
-</div>

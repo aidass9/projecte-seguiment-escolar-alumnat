@@ -1,8 +1,8 @@
-<div class="row">
+<div class="row div-grupos">
     <div class="col-sm-12 col-md-12 col-xs-12 div-elegir-grupo">
         <h2>Tria un grup</h2>
 
-        <form method="POST" action="<?php echo site_url('cargarAlumnos') ?>">
+        <form method="POST" action="<?php echo site_url('cargarAlumnos') ?>" class="formulario-select-grupo">
             <select name="grupo" class="select-grupos">
                 <?php
                     foreach ($grupos as $grupo) {

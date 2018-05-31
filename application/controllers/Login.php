@@ -29,7 +29,9 @@ class Login extends CI_Controller
 
     public function validarUsuario()
     {
-        session_start();
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
 
         $this->form_validation->set_rules('documento', '', 'required');
         $this->form_validation->set_rules('pass', '', 'required');

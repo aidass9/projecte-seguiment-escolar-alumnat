@@ -1,233 +1,253 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
 }
 
 body {
-    width: 100%;
+	width: 100%;
+}
+
+.table-wrapper-movil {
+	display: none;
 }
 
 /********** VISTA MOVIL ***********/
 @media (max-width: 768px) {
+	/******** TEMPLATED LOGIN *******/
+	#mensajeBienvenida {
+		margin-top: -330px;
+		height: 0;
+	}
 
-    /******** TEMPLATED LOGIN *******/
-    #mensajeBienvenida {
-        margin-top: -330px;
-        height: 0;
-    }
+	#login {
+		margin-top: -175px;
+	}
 
-    #login {
-        margin-top: -175px;
-    }
+	#login h3 {
+		font-size: 20px;
+	}
 
-    #login h3 {
-        font-size: 20px;
-    }
+	.titulo-login {
+		font-size: 25px;
+	}
 
-    .titulo-login {
-        font-size: 25px;
-    }
+	#boton-iniciar-sesion {
+		width: 90px;
+		padding-left: 5px;
+		padding-right: 5px;
+		padding-bottom: 10px;
+		padding-top: 10px;
+	}
 
-    #boton-iniciar-sesion {
-        width: 90px;
-        padding-left: 5px;
-        padding-right: 5px;
-        padding-bottom: 10px;
-        padding-top: 10px;
-    }
+	.boton-iniciar-sesion {
+		width: 175px;
+		padding-left: 5px !important;
+		padding-right: 5px !important;
+		padding-bottom: 10px !important;
+		padding-top: 10px !important;
+	}
 
-    .boton-iniciar-sesion {
-        width: 175px;
-        padding-left: 5px !important;
-        padding-right: 5px !important;
-        padding-bottom: 10px !important;
-        padding-top: 10px !important;
-    }
+	.div-btn-cerrar-sesion {
+	}
 
-    .div-btn-cerrar-sesion {
+	#boton-cerrar-sesion {
+		width: 100px !important;
+		padding-left: 0px !important;
+		padding-right: 0px !important;
+		padding-bottom: 5px !important;
+		padding-top: 5px !important;
+		background-color: #f77b6e !important;
+		color: white !important;
+		font-size: 10px !important;
+	}
 
-    }
+	.nav-bar {
+		height: 50px !important;
+	}
 
-    #boton-cerrar-sesion {
-        width: 100px !important;
-        padding-left: 0px !important;
-        padding-right: 0px !important;
-        padding-bottom: 5px !important;
-        padding-top: 5px !important;
-        background-color: #f77b6e !important;
-        color: white !important;
-        font-size: 10px !important;
-    }
-
-    .nav-bar {
-        height: 50px !important;
-
-    }
-
-    .tabla-seguimiento-alumnos {
-        overflow-x: auto;
-        min-width: 1000px;
-    }
+	.tabla-seguimiento-alumnos {
+		overflow-x: auto;
+		min-width: 1000px;
+	}
+	.table-wrapper-pc {
+		display: none;
+	}
+	.table-wrapper-movil form {
+		border-bottom: 1px solid black;
+	}
+	.table-wrapper-movil {
+		display: block ;
+	}
+	.table-wrapper-movil form:nth-child(odd) {
+		padding: 20px 10px;
+		background-color: #D8D8D8;
+	}
+	.table-wrapper-movil form:nth-child(even) {
+		padding: 20px 10px;
+		background-color: #cbcaca;
+	}
 }
+
 /************** PLANTILLA LOGIN *************/
-.view, body, html {
-    height: 100%;
+.view,
+body,
+html {
+	height: 100%;
 }
 @media (max-width: 740px) {
-    .full-page-intro {
-        height: 1000px;
-    }
+	.full-page-intro {
+		height: 1000px;
+	}
 }
 .carousel {
-    height: 50%;
+	height: 50%;
 }
 .carousel .carousel-inner,
 .carousel .carousel-inner .active,
 .carousel .carousel-inner .carousel-item {
-    height: 100%;
+	height: 100%;
 }
 @media (max-width: 776px) {
-    .carousel {
-        height: 100%;
-    }
+	.carousel {
+		height: 100%;
+	}
 }
 .navbar {
-    background-color: rgba(0, 0, 0, 0.3);
+	background-color: rgba(0, 0, 0, 0.3);
 }
-.page-footer, .top-nav-collapse {
-    background-color: #1c2331;
+.page-footer,
+.top-nav-collapse {
+	background-color: #1c2331;
 }
 @media only screen and (max-width: 768px) {
-    .navbar {
-        background-color: #1c2331;
-    }
+	.navbar {
+		background-color: #1c2331;
+	}
 }
 
-html, body, header, .view {
-    height: 100%;
+html,
+body,
+header,
+.view {
+	height: 100%;
 }
 
 @media (max-width: 740px) {
-    html,
-    body,
-    header,
-    .view {
-        height: 1000px;
-    }
+	html,
+	body,
+	header,
+	.view {
+		height: 1000px;
+	}
 }
 
 @media (min-width: 800px) and (max-width: 850px) {
-    html,
-    body,
-    header,
-    .view {
-        height: 650px;
-    }
+	html,
+	body,
+	header,
+	.view {
+		height: 650px;
+	}
 }
 @media (min-width: 800px) and (max-width: 850px) {
-    .navbar:not(.top-nav-collapse) {
-        background: #1c2331 !important;
-    }
+	.navbar:not(.top-nav-collapse) {
+		background: #1c2331 !important;
+	}
 }
 
 /********************************/
 
 #login {
-    display: none;
+	display: none;
 }
 
 .mostrarLogin {
-    display: block !important;
+	display: block !important;
 }
 
 #mensajeBienvenida {
-    padding-bottom: 150px;
+	padding-bottom: 150px;
 }
 
 #footer {
-    /*margin-top: 0 !important;*/
-    /*position: absolute;
+	/*margin-top: 0 !important;*/
+	/*position: absolute;
     bottom: 0;
     width: 100%;
     z-index: 10;*/
-    margin-top: 0px !important;
+	margin-top: 0px !important;
 }
 
 .div-login {
-    /*margin-top: 60px;*/
-
+	/*margin-top: 60px;*/
 }
 
 body {
-    height: 100%;
-    /*margin-top: 65px;*/
-
+	height: 100%;
+	/*margin-top: 65px;*/
 }
 
 .table-wrapper {
-    display: block;
-    max-height: 300px;
-    /*overflow-y: auto;*/
-    /*-ms-overflow-style: -ms-autohiding-scrollbar;*/
+	display: block;
+	max-height: 300px;
+	/*overflow-y: auto;*/
+	/*-ms-overflow-style: -ms-autohiding-scrollbar;*/
 }
 
 .botones-editar-guardar-alumnos {
-    width: 90px;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-bottom: 10px;
-    padding-top: 10px;
+	width: 90px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 10px;
+	padding-top: 10px;
 }
 
 .table-wrapper {
-    /*max-height: none;*/
-    max-height: 600px;
+	/*max-height: none;*/
+	max-height: 600px;
 }
-
 
 /*NAVBAR*/
 .nav-bar {
-    width: 100%;
-    height: 60px;
-    background-color: #eee;
-    position: fixed;
-
-
+	width: 100%;
+	height: 60px;
+	background-color: #eee;
+	position: fixed;
 }
 
 #boton-cerrar-sesion {
-    width: 135px;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    background-color: #f77b6e !important;
-    color: white !important;
+	width: 135px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	background-color: #f77b6e !important;
+	color: white !important;
 }
 
 .select-grupos {
-    background-color: #4285f436;
-    width: 105px;
-    border: 1px solid #4285f436;
-    border-radius: 5px;
-    padding-left: 5px;
+	background-color: #4285f436;
+	width: 105px;
+	border: 1px solid #4285f436;
+	border-radius: 5px;
+	padding-left: 5px;
 }
 
 .div-elegir-grupo {
-    text-align: center;
+	text-align: center;
 }
 
 .boton-ver-alumnos {
-    width: 140px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+	width: 140px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 .espacio-nav {
-    height: 65px;
+	height: 65px;
 }
 
 /*
@@ -237,4 +257,18 @@ body {
     evento onchange -> poner display block el seleccionado
 
 */
+.div-grupos,
+.tabla-alumnos {
+	width: 100%;
+	margin-left: 0;
+	height: calc(100% - 60px);
+	position: absolute;
+	bottom: 0;
+}
+.div-grupos {
+	background-image: url('../img/background-grupos.jpg');
+}
 
+.row {
+	margin-right: 0px;
+}
