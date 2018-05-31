@@ -1,24 +1,23 @@
 <?php
 
 require_once("DefaultController.php");
+
 class Amonestacion extends DefaultController {
-    
+
     public function __construct() {
-    parent::__construct();
+        parent::__construct();
         $this->load->model('Importacio_model');
         $this->load->library('session');
 
         $selectEvaluacion = $this->input->post('selectEvaluacion');
 
-        if($selectEvaluacion == "") {
+        if ($selectEvaluacion == "") {
             $selectEvaluacion = '0';
         }
 
         $this->session->set_userdata('evaluacionActiva', $selectEvaluacion);
-
     }
-    
-    
+
     public function index($pagina = 1) {
         $datos['titulo'] = "Amonestaciones";
 
@@ -27,8 +26,7 @@ class Amonestacion extends DefaultController {
         $this->cargarVista('amonestacion', $datos);
     }
 
-    public function login()
-    {
+    public function login() {
         $this->load->view('template/header', ['titulo' => 'Login']);
         $this->load->view('template/mensaje');
         $this->load->view('login');
@@ -37,7 +35,6 @@ class Amonestacion extends DefaultController {
 
     public function importar() {
         $resultado = $this->Importacio_model->importarGrupoProfesor();
-
     }
 
     public function cargarAlumnos() {
@@ -48,12 +45,10 @@ class Amonestacion extends DefaultController {
             session_start();
         }
 
-        if(!isset($grupo)) {
+        if (!isset($grupo)) {
             $grupo = $_SESSION['grupo'];
-        }
-        else {
+        } else {
             $_SESSION['grupo'] = $grupo;
-
         }
 
         $buscadorAlumno = $this->input->post('buscadorAlumno');
@@ -69,6 +64,15 @@ class Amonestacion extends DefaultController {
 
     public function importarAsignaturas() {
         $resultado = $this->Importacio_model->importarAsignaturas();
-
     }
+
+    /*FUNCIONES IMPORTAR NUEVAS (POR PROBAR)*/
+    public function importarAlumnos() {
+        $resultado = $this->Importacio_model->importarAlumnos();
+    }
+    
+    public function importarProfesores() {
+        $resultado = $this->Importacio_model->importarProfesores();
+    }
+
 }

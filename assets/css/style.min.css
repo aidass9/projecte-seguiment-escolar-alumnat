@@ -6,6 +6,7 @@
 
 body {
     width: 100%;
+    display: flex;
 }
 
 /********** VISTA MOVIL ***********/
@@ -68,6 +69,17 @@ body {
     .tabla-seguimiento-alumnos {
         overflow-x: auto;
         min-width: 1000px;
+    }
+    
+    .formulario-select-grupo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .fila-alumno {
+        display: flex;
+        flex-direction: column;
     }
 }
 /************** PLANTILLA LOGIN *************/
@@ -230,11 +242,13 @@ body {
     height: 65px;
 }
 
-/*
-    SELECT con las 4 evaluaciones
-    al principio mostrar la evaluacion principal con display block, las otras con display none
-    evento onchange -> todos ocultos
-    evento onchange -> poner display block el seleccionado
 
-*/
+.div-grupos {
+    background-image: url('../img/background-grupos.jpg');
+    width: 100%;
+}
+
+.row {
+    margin-right: 0px;
+}
 

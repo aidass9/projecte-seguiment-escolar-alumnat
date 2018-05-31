@@ -63,10 +63,10 @@
                   action="<?php echo site_url('AnotacionesAvaluaciones/guardarAnotaciones') ?>" method="POST">
 
 
-                <tr id="alumno<?= $alumno->NIA ?>">
+                <tr id="alumno<?= $alumno->NIA ?>" class="fila-alumno">
 
                     <?php
-                    echo "<td>";
+                    echo "<td class='fila-alumno'>";
                     echo "NIA: " . $alumno->NIA . " <br>";
                     echo "Cognoms: " . $alumno->apellido1 . " " . $alumno->apellido2 . " <br>";
                     echo "Nom: " . $alumno->nombre . " <br>";
@@ -82,7 +82,7 @@
 
                     <input type="hidden" name="nia" value="<?php echo $alumno->NIA ?>">
 
-                    <td>
+                    <td class="fila-alumno">
                         <div class="form-group">
                             <label for="comment">Avaluació inicial</label>
                             <textarea class="form-control" rows="5" name="0avaluacio"
@@ -90,7 +90,7 @@
                         </div>
                     </td>
 
-                    <td>
+                    <td class="fila-alumno">
                         <div class="form-group">
                             <label for="comment">1ª avaluació</label>
                             <textarea class="form-control" rows="5" name="1avaluacio"
@@ -98,7 +98,7 @@
                         </div>
                     </td>
 
-                    <td class="d-xs-none">
+                    <td class="fila-alumno">
                         <div class="form-group">
                             <label for="comment">2ª avaluació</label>
                             <textarea class="form-control" rows="5" name="2avaluacio"
@@ -106,7 +106,7 @@
                         </div>
                     </td>
 
-                    <td class="d-xs-none">
+                    <td class="fila-alumno">
                         <div class="form-group">
                             <label for="comment">3ª avaluació</label>
                             <textarea class="form-control" rows="5" name="3avaluacio"
@@ -114,7 +114,7 @@
                         </div>
                     </td>
 
-                    <td>
+                    <td class="fila-alumno">
                         <button type="submit" class="btn btn-primary boton-guardar-observaciones">Guardar</button>
                     </td>
 

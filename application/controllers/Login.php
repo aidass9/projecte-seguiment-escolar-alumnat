@@ -50,15 +50,12 @@ class Login extends CI_Controller
                 self::mostrarAlert($_SESSION['usuario']['nombre']." has iniciat sessió amb èxit!", "success");
                 redirect('/');
 
-
             }
-
             else {
                 self::mostrarAlert("No has introduït bé l'usuari o la contrasenya", "error");
                 redirect('/login');
             }
         }
-
     }
 
     public function cerrarSesion() {

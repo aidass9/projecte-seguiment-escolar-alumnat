@@ -30,8 +30,6 @@ class Importacio_model extends CI_Model
 
         foreach ($this->sxe->xpath('//horario_grupo') as $horarioGrupo) {
 
-            echo "---------<hr>";
-
             $dia_semana = $horarioGrupo['dia_semana'];
             $sesion_orden = $horarioGrupo['sesion_orden'];
             $hora_desde = $horarioGrupo['hora_desde'];
@@ -39,8 +37,6 @@ class Importacio_model extends CI_Model
             $grupo = $horarioGrupo['grupo'];
             $contenido = $horarioGrupo['contenido'];
             $docente = $horarioGrupo['docente'];
-
-            echo $docente;
 
             $data = array(
                 'dia_semana' => $dia_semana,
@@ -50,11 +46,9 @@ class Importacio_model extends CI_Model
                 'grupo' => $grupo,
                 'contenido' => $contenido,
                 'docente' => $docente
-
             );
 
             $this->db->insert('grupo_profesor', $data);
-
         }
     }
 
@@ -66,9 +60,6 @@ class Importacio_model extends CI_Model
         $this->sxe = new SimpleXMLElement($this->xml);
 
         foreach ($this->sxe->xpath('//contenido') as $asignatura) {
-            print_r($asignatura);
-
-            echo "---------<hr>";
 
             $asignatura_curso = $asignatura['curso'];
             $asignatura_codigo = $asignatura['codigo'];
@@ -80,11 +71,7 @@ class Importacio_model extends CI_Model
                 'asignatura_codigo' => $asignatura_codigo,
                 'asignatura_nombre_cas' => $asignatura_descrip_cas,
                 'asignatura_nombre_val' => $asignatura_descrip_val,
-
-
             );
-
-            print_r($data);
 
             $this->db->insert('asignaturas', $data);
 
