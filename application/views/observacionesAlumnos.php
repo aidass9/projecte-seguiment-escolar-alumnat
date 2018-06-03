@@ -26,12 +26,11 @@
             <form name="formularioSeleccionarEvaluacion" method="POST">
                 <p>Seleccionar avaluació:</p>
                 <select name="selectEvaluacion" onchange="this.form.submit()">
-                    <option value="">Elegir avaluacio</option>
-                    <option value="0">Avalució 0</option>
-                    <option value="1">1ª avaluació</option>
-                    <option value="2">2ª avaluació</option>
-                    <option value="3">3ª avaluació</option>
-                </select>
+                    <option value="0" <?php if ($selectGrupo === '0') echo 'selected' ?>>Avalució 0</option>
+                    <option value="1" <?php if ($selectGrupo === '1') echo 'selected' ?>>1ª avaluació</option>
+                    <option value="2" <?php if ($selectGrupo === '2') echo 'selected' ?>>2ª avaluació</option>
+                    <option value="3" <?php if ($selectGrupo === '3') echo 'selected' ?>>3ª avaluació</option>
+                </select>			
             </form>
 
         </div>

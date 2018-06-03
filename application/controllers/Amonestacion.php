@@ -54,6 +54,12 @@ class Amonestacion extends DefaultController {
         else {
             $_SESSION['grupo'] = $grupo;
 
+		}
+		
+		$selectEvaluacion = $this->input->post('selectEvaluacion');
+
+        if($selectEvaluacion == "") {
+            $selectEvaluacion = '0';
         }
 
         $buscadorAlumno = $this->input->post('buscadorAlumno');
@@ -62,7 +68,9 @@ class Amonestacion extends DefaultController {
 
         $datos['alumnos'] = $this->Importacio_model->selectorAlumnosPorGrupo($grupo, $buscadorAlumno);
 
-        $datos['titulo'] = "Llistat alumnat: " . $grupo;
+		$datos['titulo'] = "Llistat alumnat: " . $grupo;
+		
+		$datos['selectGrupo'] = $selectEvaluacion;
 
         $this->cargarVista('observacionesAlumnos', $datos);
     }

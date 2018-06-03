@@ -9,8 +9,7 @@ class AnotacionesAvaluaciones_model extends CI_Model {
         $this->load->helper('url');
     }
 
-    function guardarAnotaciones($datos, $nia) {
-
+    function guardarAnotaciones($datos, $nia) {	
         $evaluacion = $this->session->userdata('evaluacionActiva');
         $this->db->where('alumne', $nia);
         $this->db->where('avaluacio', $evaluacion);

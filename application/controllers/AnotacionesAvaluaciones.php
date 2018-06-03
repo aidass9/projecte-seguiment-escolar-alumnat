@@ -18,7 +18,7 @@ class AnotacionesAvaluaciones extends DefaultController
         $nia = $this->input->post("nia");
 
         $avalInicial = $this->input->post("0avaluacio", 0);
-        if ($avalInicial != 0) {
+        if ($avalInicial != "") {
             $comentarios['0'] = $avalInicial;
 
         }
@@ -39,7 +39,7 @@ class AnotacionesAvaluaciones extends DefaultController
         }
 
         $datos = array('alumne' => $nia, 'comentario' => $comentarios);
-
+		print_r($datos);
         if (count($comentarios) !== 0) self::actualizarAvaluacio($datos, $nia);
     }
 
