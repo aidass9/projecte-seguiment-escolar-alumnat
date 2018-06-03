@@ -71,4 +71,14 @@ class Amonestacion extends DefaultController {
         $resultado = $this->Importacio_model->importarAsignaturas();
 
     }
+
+    /*public function importarProfesor() {
+        $resultado = $this->Importacio_model->importarProfesor();
+
+    }
+
+    public function importarAlumnos() {
+        $resultado = $this->Importacio_model->importarAlumnos();
+
+    }*/
 }

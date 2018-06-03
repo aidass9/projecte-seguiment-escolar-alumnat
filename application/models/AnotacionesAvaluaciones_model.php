@@ -19,8 +19,6 @@ class AnotacionesAvaluaciones_model extends CI_Model {
 
         return $this->db->update('notesavaluacio', ['comentari' => $datos['comentario'][$evaluacion]] );
 
-
-
     }
 
 }

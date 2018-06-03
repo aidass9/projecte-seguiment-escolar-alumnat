@@ -30,8 +30,6 @@ class Importacio_model extends CI_Model
 
         foreach ($this->sxe->xpath('//horario_grupo') as $horarioGrupo) {
 
-            echo "---------<hr>";
-
             $dia_semana = $horarioGrupo['dia_semana'];
             $sesion_orden = $horarioGrupo['sesion_orden'];
             $hora_desde = $horarioGrupo['hora_desde'];
@@ -39,8 +37,6 @@ class Importacio_model extends CI_Model
             $grupo = $horarioGrupo['grupo'];
             $contenido = $horarioGrupo['contenido'];
             $docente = $horarioGrupo['docente'];
-
-            echo $docente;
 
             $data = array(
                 'dia_semana' => $dia_semana,
@@ -66,9 +62,6 @@ class Importacio_model extends CI_Model
         $this->sxe = new SimpleXMLElement($this->xml);
 
         foreach ($this->sxe->xpath('//contenido') as $asignatura) {
-            print_r($asignatura);
-
-            echo "---------<hr>";
 
             $asignatura_curso = $asignatura['curso'];
             $asignatura_codigo = $asignatura['codigo'];
@@ -81,7 +74,6 @@ class Importacio_model extends CI_Model
                 'asignatura_nombre_cas' => $asignatura_descrip_cas,
                 'asignatura_nombre_val' => $asignatura_descrip_val,
 
-
             );
 
             print_r($data);
@@ -90,6 +82,87 @@ class Importacio_model extends CI_Model
 
         }
     }
+
+    /*public function importarAlumnos()
+    {
+        $this->xml_file = "C:\\xampp\htdocs\amonestacion\importar\imexalum_alumnes.xml";
+        $this->xml = file_get_contents($this->xml_file);
+        $this->sxe = new SimpleXMLElement($this->xml);
+
+        foreach ($this->sxe->xpath('//alumno') as $alumno) {
+
+            $NIA = $alumno['NIA'];
+            $nombre = $alumno['nombre'];
+            $apellido1 = $alumno['apellido1'];
+            $apellido2 = $alumno['apellido2'];
+            $telefono1 = $alumno['telefono1'];
+            $email1 = $alumno['email1'];
+            $municipio = $alumno['municipio'];
+            $localidad = $alumno['localidad'];
+            $telefono2 = $alumno['telefono2'];
+            $telefono3 = $alumno['$telefono3'];
+            $fecha_matricula = $alumno['fecha_matricula'];
+            $estado_matricula = $alumno['estado_matricula'];
+            $ensenanza = $alumno['ensenanza'];
+            $curso = $alumno['curso'];
+            $grupo = $alumno['grupo'];
+            $fecha_nac = $alumno['fecha_nac'];
+            $repite = $alumno['repite'];
+
+            $data = array(
+                'NIA' => $NIA,
+                'nombre' => $nombre,
+                'apellido1' => $apellido1,
+                'apellido2' => $apellido2,
+                'telefono1' => $telefono1,
+                'email1' => $email1,
+                'municipio' => $municipio,
+                'localidad' => $localidad,
+                'telefono' => $telefono2,
+                'telefono3' => $telefono3,
+                'fecha_matricula' => $fecha_matricula,
+                'estado_matricula' => $estado_matricula,
+                '$ensenanza' => $ensenanza,
+                'curso' => $curso,
+                'grupo' => $grupo,
+                'fecha_nac' => $fecha_nac,
+                'repite' => $repite
+
+
+            );
+
+            $this->db->insert('alumno', $data);
+
+        }
+    }*/
+
+    /*public function importarProfesor()
+    {
+        $this->xml_file = "C:\\xampp\htdocs\amonestacion\importar\imexalum_profesors.xml";
+        $this->xml = file_get_contents($this->xml_file);
+        $this->sxe = new SimpleXMLElement($this->xml);
+
+        foreach ($this->sxe->xpath('//profesor') as $profesor) {
+
+            $documento = $profesor['documento'];
+            $nombre = $profesor['nombre'];
+            $apellido1 = $profesor['apellido1'];
+            $apellido2 = $profesor['apellido2'];
+            $pass = $profesor['pass'];
+
+            $data = array(
+                'documento' => $documento,
+                'nombre' => $nombre,
+                'apellido1' => $apellido1,
+                'apellido2' => $apellido2,
+                'pass' => $pass
+
+            );
+
+            $this->db->insert('profesor', $data);
+
+        }
+    }*/
 
     function selectorGrupos()
     {
