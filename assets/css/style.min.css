@@ -182,6 +182,7 @@ header,
 
 #login {
 	display: none;
+        height: 281px !important;
 }
 
 .mostrarLogin {
