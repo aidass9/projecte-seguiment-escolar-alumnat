@@ -76,8 +76,6 @@ class Importacio_model extends CI_Model
 
             );
 
-            print_r($data);
-
             $this->db->insert('asignaturas', $data);
 
         }

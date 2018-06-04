@@ -40,9 +40,6 @@
     <div class="table-wrapper-pc">
         <h2 class="titulo-grupo"><?= $_SESSION['grupo'] ?></h2>
 
-
-                <!--<h2><?php $datos->grupo ?></h2>-->
-
         <table class="table table-hover mb-0 tabla-seguimiento-alumnos">
 
 

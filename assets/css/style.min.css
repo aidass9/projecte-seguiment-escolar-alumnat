@@ -273,14 +273,6 @@ body {
 	height: 65px;
 }
 
-/*
-    SELECT con las 4 evaluaciones
-    al principio mostrar la evaluacion principal con display block, las otras con display none
-    evento onchange -> todos ocultos
-    evento onchange -> poner display block el seleccionado
-
-*/
-
 .div-grupos {
 	background-image: url('../img/background-grupos.jpg');
 }

@@ -39,7 +39,7 @@ class AnotacionesAvaluaciones extends DefaultController
         }
 
         $datos = array('alumne' => $nia, 'comentario' => $comentarios);
-		print_r($datos);
+		
         if (count($comentarios) !== 0) self::actualizarAvaluacio($datos, $nia);
     }
 
